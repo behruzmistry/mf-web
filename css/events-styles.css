@@ -1,3 +1,255 @@
+/* Hero Section */
+.hero-section {
+    min-height: 38vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    padding-top: 120px;
+}
+.hero-content {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.hero-title {
+    font-family: var(--font-heading);
+    font-size: clamp(2.5rem, 6vw, 5rem);
+    font-weight: 900;
+    text-transform: uppercase;
+    margin-bottom: 0px;
+    line-height: 1.1;
+    background: var(--gradient-purple);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-fill-color: transparent;
+    text-align: center;
+}
+
+/* Swiper Event Slider */
+.events-section { padding: 5px 0px 0px 30px;}
+.event-slider {
+    position: relative;
+    width: 100%;
+    padding-bottom: 5px;
+    overflow-x: auto;
+    overflow-y: visible;
+}
+.swiper-wrapper {
+    align-items: stretch;
+    flex-wrap: nowrap;
+    min-width: 100vw;
+    width: max-content;
+}
+.event-card.swiper-slide {
+    width: 380px;
+    min-width: 380px;
+    max-width: 380px;
+    min-height: 530px;
+    height: 530px;
+    display: grid;
+    grid-template-rows:
+        150px  /* Logo */
+        60px   /* Title */
+        100px  /* Description */
+        88px   /* Details */
+        20px    /* Spacer - now flexible */
+        96px;  /* Buttons */
+    align-items: start;
+    justify-items: center;
+    background-color: rgba(15, 15, 15, 0.8);
+    border-radius: 14px;
+    padding: 0 24px 0 24px;
+    box-sizing: border-box;
+    text-align: center;
+}
+.event-card-image-container {
+    width: 100%;
+    height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    padding-bottom: 8px;
+}
+.event-card-image-container img {
+    width: 100%;
+    max-width: 144px;
+    max-height: 144px;
+    object-fit: contain;
+    display: block;
+    margin: 0 auto;
+}
+.event-card h3 {
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-heading);
+    font-size: 2em;
+    margin: 0;
+    color: #fff;
+    letter-spacing: 1px;
+    width: 100%;
+    text-align: center;
+    overflow: hidden;
+}
+.event-card .description {
+    height: 100px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: middle;
+    font-size: 1em;
+    color: #d7d7d7;
+    width: 100%;
+    text-align: left;
+    overflow: hidden;
+    margin-left: 0;
+    margin-right: 0;
+}
+.event-card .details {
+    height: 88px;
+    display: grid;
+    grid-template-rows: repeat(3, 1fr);
+    gap: 0px;
+    width: 100%;
+    text-align: center;
+    align-items: center;
+    justify-content: middle;
+    font-size: 1em;
+    color: #bbb;
+    font-style: italic;
+    overflow: hidden;
+}
+
+.event-card .details > div {
+    display: flex;
+    align-items: center;
+    gap: 0.45em;
+    flex-wrap: nowrap;
+    min-width: 0;
+    margin-bottom: 0px;
+}
+.event-card .details .label {
+align-items: center;
+    margin-right: 4px;
+    font-size: 1.13em;
+    vertical-align: middle;
+justify-content: center;
+    display: inline-block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.event-card .details .value {
+justify-content: center;
+align-items: center;
+    font-size: 1em;
+    display: inline-block;
+    vertical-align: middle;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.event-card-buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    gap: 2px;
+    height: 90px;
+    justify-content: center;
+    margin-top: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+}
+.cta-button {
+    width: 94%;
+    max-width: 210px;
+    min-width: 120px;
+    padding: 12px 0;
+    font-size: 1.08em;
+    margin: 0 auto;
+    box-sizing: border-box;
+    display: block;
+    font-family: var(--font-body);
+    font-weight: 700;
+    border-radius: 5px;
+    background-image: var(--gradient-purple);
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    transition: transform .3s, box-shadow .3s, background-image .3s;
+}
+/* Swiper Arrows */
+.swiper-button-next, .swiper-button-prev {
+    color: #fff;
+    /* background: rgba(142,45,226,0.85); */ /* Removed background to eliminate purple dot */
+    width: 38px; height: 38px; border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    top: 50%; transform: translateY(-50%);
+    transition: background .3s, transform .2s;
+    box-shadow: 0 4px 16px rgba(142,45,226,0.09);
+    z-index: 2;
+}
+.swiper-button-next:hover, .swiper-button-prev:hover {
+    /* background: rgba(142,45,226,1); */
+    transform: translateY(-50%) scale(1.08);
+}
+.swiper-button-prev { left: 8px; }
+.swiper-button-next { right: 8px; }
+@media (max-width: 1300px) {
+    .event-card.swiper-slide {
+        width: 380px;
+        min-width: 380px;
+        max-width: 380px;
+    }
+}
+@media (max-width: 900px) {
+    .event-card.swiper-slide {
+        width: 90vw;
+        min-width: 90vw;
+        max-width: 90vw;
+    }
+    .swiper-button-next, .swiper-button-prev { display: none; }
+}
+@media (max-width: 700px) {
+    .events-section { padding: 40px 0 20px;}
+    .event-card.swiper-slide {
+        width: 98vw;
+        min-width: 98vw;
+        max-width: 98vw;
+    }
+    .hero-section { padding-top: 90px;}
+}
+
+/* Bottom CTA */
+.bottom-cta-section {
+    padding: 40px 0; text-align: center;
+    background-color: rgba(26,26,26,.8); margin-top: 0;
+}
+.bottom-cta-section p { font-size: 1.2em; margin-bottom: 20px;}
+.bottom-cta-section a {
+    color: #8e2de2; text-decoration: underline; font-weight: 600; transition: color .3s;
+}
+.bottom-cta-section a:hover { color: #fff;}
+
+/* Popup Forms -- these will override similar rules in events-styles.css if any conflict, as requested */
+.popup{display:none;position:fixed;left:0;top:0;width:100%;height:100%;background-color:rgba(0,0,0,.85);justify-content:center;align-items:center;z-index:1000;opacity:0;visibility:hidden;transition:opacity .3s,visibility .3s}
+.popup.active{display:flex;opacity:1;visibility:visible}
+.popup-content{background-color:#1a1a1a;padding:30px 40px;border-radius:8px;width:90%;max-width:500px;text-align:left;position:relative;transform:scale(.95);transition:transform .3s}
+.popup.active .popup-content{transform:scale(1)}
+.popup-content h2{font-family:"Oswald",sans-serif;margin-top:0;margin-bottom:25px;font-size:1.8em;text-align:center}
+.popup-content label{display:block;margin-bottom:8px;font-weight:600;font-size:.9em}
+.popup-content input[type="text"],.popup-content input[type="email"],.popup-content input[type="tel"],.popup-content input[type="date"],.popup-content input[type="number"],.popup-content select{width:calc(100% - 22px);padding:12px;margin-bottom:20px;border-radius:4px;border:1px solid #555;background-color:#333;color:#fff;font-family:"Montserrat",sans-serif;font-size:1em;transition:border-color .3s,box-shadow .3s}
+.popup-content input:focus,.popup-content select:focus{border-color:#8e2de2;box-shadow:0 0 0 2px rgba(142,45,226,.3);outline:none}
+.popup-content .popup-close{position:absolute;top:15px;right:20px;font-size:1.8em;color:#777;cursor:pointer;transition:color .3s,transform .3s}
+.popup-content .popup-close:hover{color:#fff;transform:rotate(90deg)}
+.confirmation-message{padding:20px;text-align:center;background-color:rgba(40,167,69,0.2);border:1px solid #28a745;border-radius:5px;margin-top:20px;display:none}
+
 /* Modal styles for booking forms */
 .modal {
     display: none;

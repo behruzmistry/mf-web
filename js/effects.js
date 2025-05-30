@@ -22,76 +22,6 @@ function setupParallax() {
     }
 }
 
-// Animated Background Gradient
-function setupAnimatedGradient() {
-    const noiseBg = document.querySelector('.noise-bg');
-    
-    if (noiseBg) {
-        let angle = 135;
-        
-        setInterval(() => {
-            angle = (angle + 1) % 360;
-            noiseBg.style.background = `linear-gradient(${angle}deg, #000000, #1a001a, #000000)`;
-        }, 100);
-    }
-}
-
-// Smooth Scroll for Navigation Links
-function setupSmoothScroll() {
-    const navLinks = document.querySelectorAll('a[href^="#"]');
-    
-    navLinks.forEach(link => {
-        link.addEventListener('click', (e) => {
-            const targetId = link.getAttribute('href');
-            
-            if (targetId !== '#') {
-                e.preventDefault();
-                
-                const targetElement = document.querySelector(targetId);
-                if (targetElement) {
-                    targetElement.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                    
-                    // Close mobile menu if open
-                    const navMenu = document.querySelector('.nav-menu');
-                    if (navMenu && navMenu.classList.contains('active')) {
-                        navMenu.classList.remove('active');
-                    }
-                }
-            }
-        });
-    });
-}
-
-// Hover Effects for Cards
-function setupCardHoverEffects() {
-    const cards = document.querySelectorAll('.event-card, .mix-card, .podcast-card, .product-card, .service-card');
-    
-    cards.forEach(card => {
-        card.addEventListener('mouseenter', () => {
-            card.style.transform = 'translateY(-10px)';
-            card.style.boxShadow = '0 15px 30px rgba(0, 0, 0, 0.4)';
-            
-            const image = card.querySelector('img');
-            if (image) {
-                image.style.transform = 'scale(1.1)';
-            }
-        });
-        
-        card.addEventListener('mouseleave', () => {
-            card.style.transform = 'translateY(0)';
-            card.style.boxShadow = '0 10px 30px rgba(0, 0, 0, 0.3)';
-            
-            const image = card.querySelector('img');
-            if (image) {
-                image.style.transform = 'scale(1)';
-            }
-        });
-    });
-}
-
 // Animated Counter for Statistics
 function setupCounters() {
     const counters = document.querySelectorAll('.counter');
@@ -147,29 +77,10 @@ function setupTypingEffect() {
     }
 }
 
-// Audio Player Customization
-function setupAudioPlayers() {
-    const audioPlayers = document.querySelectorAll('audio');
-    
-    audioPlayers.forEach(player => {
-        player.addEventListener('play', () => {
-            // Pause all other audio players
-            audioPlayers.forEach(otherPlayer => {
-                if (otherPlayer !== player && !otherPlayer.paused) {
-                    otherPlayer.pause();
-                }
-            });
-        });
-    });
-}
-
 // Initialize on DOM Content Loaded
 document.addEventListener('DOMContentLoaded', () => {
-    setupParallax();
-    setupAnimatedGradient();
-    setupSmoothScroll();
-    setupCardHoverEffects();
-    setupCounters();
-    setupTypingEffect();
-    setupAudioPlayers();
+    // Calls to setupParallax, setupCounters, setupTypingEffect
+    // should be made from specific pages if needed, not globally here.
+    // For example, a page could do:
+    // if (typeof setupParallax === 'function') setupParallax();
 });
