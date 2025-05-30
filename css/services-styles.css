@@ -1,0 +1,245 @@
+/* Hero Section */
+.hero-section {
+    min-height: 60vh; /* Reduced height */
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Center content */
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    padding-top: 120px; /* Account for fixed header */
+    padding-bottom: 60px;
+}
+
+.hero-content {
+    max-width: 800px;
+    transform: translateY(30px);
+    opacity: 0;
+    animation: fadeInUp 1s forwards;
+}
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.hero-title {
+    font-family: var(--font-heading);
+    font-size: clamp(3rem, 7vw, 5rem);
+    font-weight: 900;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    line-height: 1.1;
+    background: var(--gradient-purple);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-fill-color: transparent;
+}
+
+.hero-subtitle {
+    font-size: clamp(1rem, 2.5vw, 1.5rem);
+    margin-bottom: 0; /* Removed margin for tighter look */
+    color: rgba(255, 255, 255, 0.85);
+}
+
+/* General Section Styling */
+.section {
+    padding: 80px 0;
+    position: relative;
+}
+
+.section-title-main {
+    font-family: var(--font-heading);
+    font-size: clamp(2.5rem, 6vw, 4rem);
+    text-transform: uppercase;
+    margin-bottom: 60px;
+    position: relative;
+    color: var(--color-white);
+    text-align: center;
+    width: 100%;
+}
+
+.section-title-main::after {
+    content: "";
+    position: absolute;
+    bottom: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 4px;
+    background: var(--gradient-purple);
+    border-radius: 2px;
+}
+
+/* Services Grid - New Layout */
+.services-grid-new {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+    margin-top: 30px;
+}
+
+.service-card-new {
+    background-color: rgba(18, 18, 18, 0.85); /* Darker card background */
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    overflow: hidden;
+    transition: transform var(--transition-medium), box-shadow var(--transition-medium);
+    display: flex;
+    flex-direction: column;
+    padding: 30px;
+    text-align: left; /* Align text to left */
+}
+
+.service-card-new:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 35px rgba(74,0,224,0.25);
+}
+
+.service-image-container {
+    width: 100%;
+    margin-bottom: 25px;
+    border-radius: 8px;
+    overflow: hidden;
+    height: 200px; /* Fixed height for images */
+    background-color: var(--color-mid-gray); /* Placeholder if no image */
+}
+
+.service-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.service-card-new:hover .service-image {
+    transform: scale(1.08);
+}
+
+.service-title-new {
+    font-family: var(--font-heading);
+    font-size: 1.8rem; /* Slightly larger title */
+    margin-bottom: 15px;
+    color: var(--color-white);
+    text-transform: uppercase;
+}
+
+.service-description-new {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 0.95rem;
+    line-height: 1.7;
+    margin-bottom: 25px;
+    flex-grow: 1;
+}
+.service-description-new ul {
+    list-style-position: outside;
+    padding-left: 20px;
+    margin-top: 10px;
+}
+.service-description-new ul li {
+    margin-bottom: 8px;
+}
+
+.service-cta-button {
+    display: inline-block;
+    padding: 12px 30px;
+    background: var(--gradient-purple);
+    color: var(--color-white) !important;
+    text-decoration: none;
+    font-family: var(--font-body);
+    font-weight: 600;
+    font-size: 0.9rem;
+    border-radius: 50px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    text-transform: uppercase;
+    align-self: flex-start; /* Align button to start of flex container */
+    margin-top: auto; /* Pushes button to bottom if card heights vary */
+}
+
+.service-cta-button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 25px rgba(142, 45, 226, 0.35);
+}
+
+/* Contact/CTA Section */
+.contact-cta-section {
+    padding: 80px 0;
+    background-color: rgba(10,10,10,0.8);
+    text-align: center;
+    margin-top: 80px;
+}
+.contact-cta-section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background: linear-gradient(90deg, 
+        rgba(255, 255, 255, 0) 0%, 
+        rgba(255, 255, 255, 0.2) 50%, 
+        rgba(255, 255, 255, 0) 100%);
+}
+
+.contact-cta-title {
+    font-family: var(--font-heading);
+    font-size: clamp(2rem, 4vw, 3rem);
+    margin-bottom: 20px;
+    color: var(--color-white);
+}
+
+.contact-cta-description {
+    font-size: clamp(1rem, 2vw, 1.2rem);
+    color: rgba(255,255,255,0.8);
+    margin-bottom: 40px;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.cta-button-main {
+    display: inline-block;
+    padding: 18px 45px;
+    background: var(--gradient-purple);
+    color: var(--color-white) !important;
+    text-decoration: none;
+    font-family: var(--font-body);
+    font-weight: 700;
+    font-size: 1.2rem;
+    border-radius: 50px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    text-transform: uppercase;
+}
+
+.cta-button-main:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 25px rgba(142, 45, 226, 0.35);
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+    .hero-title {
+        font-size: 3.5rem;
+    }
+    .hero-subtitle {
+        font-size: 1.2rem;
+    }
+    .services-grid-new {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-title {
+        font-size: 2.8rem;
+    }
+    .section-title-main {
+        font-size: 2.5rem;
+    }
+    .services-grid-new {
+        grid-template-columns: 1fr; /* Stack cards on mobile */
+    }
+}
